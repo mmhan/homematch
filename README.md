@@ -45,17 +45,11 @@ poetry shell
 cp .env.example .env
 # Edit .env with your API keys
 
-# Generate listings (Optional, this will take a while)
+# Generate listings (Optional) - This will take a while
 poetry run python src/data_generation/generate.py
-```
 
-## ⚙️ Configuration
-
-Create a `.env` file in the project root:
-
-```env
-OPENAI_API_KEY=your_openai_api_key_here
-# Add other configuration variables as needed
+# Generate embeddings from listings
+poetry run python src/vector_store/store.py
 ```
 
 ## 📖 Usage
@@ -70,6 +64,16 @@ OPENAI_API_KEY=your_openai_api_key_here
 
 ```bash
 # TODO: Add instructions for running the main application
+```
+
+### Using the Conversational Interface
+
+```bash
+# Interactive property matching session
+python src/preferences/matcher.py
+
+# Demo with simulated responses
+python src/preferences/demo.py
 ```
 
 ### Using Jupyter Notebooks
@@ -112,19 +116,19 @@ homematch/
 - [x] Generate diverse property listings (minimum 10)
 
 ### Step 3: Storing Listings in Vector Database
-- [ ] Set up ChromaDB
-- [ ] Generate embeddings for listings
-- [ ] Store embeddings in vector database
+- [x] Set up ChromaDB
+- [x] Generate embeddings for listings
+- [x] Store embeddings in vector database
 
 ### Step 4: Building User Preference Interface
-- [ ] Design preference collection questions
-- [ ] Implement preference parsing logic
-- [ ] Structure preferences for database queries
+- [x] Design preference collection questions
+- [x] Implement preference parsing logic
+- [x] Structure preferences for database queries
 
 ### Step 5: Searching Based on Preferences
-- [ ] Implement semantic search functionality
-- [ ] Fine-tune retrieval algorithms
-- [ ] Test search accuracy
+- [x] Implement semantic search functionality
+- [x] Fine-tune retrieval algorithms
+- [x] Test search accuracy
 
 ### Step 6: Personalizing Listing Descriptions
 - [ ] Develop LLM augmentation logic
@@ -153,16 +157,30 @@ poetry run pytest --cov=src
 
 ## 📊 Example Outputs
 
-<!-- TODO: Add example inputs and outputs -->
+### Sample Conversational Flow
+```
+🤖 Hello! I'm your London property assistant. What type of property are you looking for?
 
-### Sample Buyer Preferences
-```python
-# TODO: Add example preference inputs
+👤 I'm looking for a flat, preferably modern
+
+🤖 Great choice! How many bedrooms would you like, and what's your budget range?
+
+👤 2 bedrooms would be ideal, and my budget is around £600k
+
+🤖 Which areas of London interest you most?
+
+👤 I'm interested in Clapham or Islington - somewhere trendy with good nightlife
 ```
 
-### Sample Personalized Listings
+### Sample Property Matches
 ```
-# TODO: Add example personalized listing outputs
+🏠 Property 1 (Match: 72.3%)
+📂 Category: Young Professionals
+  • Price: £525,000
+  • Bedrooms: 1
+  • Size: 550 sqft
+  • Location: Islington, N1
+  📝 Preview: Stunning converted flat with modern features and excellent transport links...
 ```
 
 ## 🤝 Contributing

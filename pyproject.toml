@@ -12,6 +12,7 @@ python = "^3.12"
 langchain = "^0.3.10"
 langchain-openai = "^0.3.10"
 langchain-community = "^0.3.10"
+langchain-chroma = "^0.1.4"
 
 # Vector Database
 chromadb = "^0.5.1"
@@ -27,7 +28,7 @@ pillow = "^11.2.1"
 
 # Data processing and utilities
 pandas = "^2.3.0"
-numpy = "^2.2.6"
+numpy = "^1.26.0,<2.0.0"
 python-dotenv = "^1.1.0"
 
 # Jupyter notebook support
