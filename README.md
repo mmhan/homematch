@@ -31,8 +31,6 @@ HomeMatch leverages Large Language Models (LLMs) and vector databases to create 
 ## 🚀 Installation
 
 ```bash
-# Clone the repository
-git clone <repository-url>
 cd homematch
 
 # Install dependencies with Poetry
@@ -58,7 +56,7 @@ python src/vector_store/store.py
 
 ```bash
 # Run the comprehensive demo with all personas
-poetry run python src/demo.py
+python src/demo.py
 ```
 
 ### Using Pre-built Personas
@@ -110,18 +108,18 @@ homematch/
 
 ```bash
 # Run the demo system
-poetry run python src/demo.py
+python src/demo.py
 
 # Test individual components
-poetry run python src/vector_store/store.py
-poetry run python src/search/search.py
-poetry run python src/personalization/personalize.py
+python src/vector_store/store.py
+python src/search/search.py
+python src/personalization/personalize.py
 ```
 
 ## 📊 Example Output
 
 ```
-❯ poetry run python src/demo.py
+❯ python src/demo.py
 🏠 Homematch Demo
 =====================================
 Loaded existing vector store with 24 documents
