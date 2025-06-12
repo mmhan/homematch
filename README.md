@@ -41,7 +41,7 @@ poetry shell
 
 # Set up environment variables
 cp .env.example .env
-# Edit .env with your OPENAI_API_KEY and OPENAI_API_BASE
+# Edit .env with your OPENAI_API_KEY and OPENAI_BASE_URL
 
 # Generate sample listings (Optional - takes ~5 minutes)
 python src/data_generation/generate.py

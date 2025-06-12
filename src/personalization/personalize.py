@@ -11,6 +11,7 @@ import os
 from typing import List, Dict, Any, Optional
 from dataclasses import dataclass
 
+from dotenv import load_dotenv
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_openai import ChatOpenAI
@@ -19,6 +20,9 @@ from langchain_openai import ChatOpenAI
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from search.search import BuyerPreferences
+
+# Load environment variables from .env file
+load_dotenv()
 
 
 @dataclass

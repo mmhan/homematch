@@ -17,6 +17,9 @@ langchain-chroma = "^0.1.4"
 # Vector Database
 chromadb = "^0.5.1"
 
+# Environment variable loading
+python-dotenv = "^1.1.0"
+
 [tool.poetry.group.dev.dependencies]
 
 

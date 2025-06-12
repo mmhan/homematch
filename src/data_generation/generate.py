@@ -2,8 +2,12 @@ import os
 import json
 import random
 
+from dotenv import load_dotenv
 from langchain_core.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
+
+# Load environment variables from .env file
+load_dotenv()
 
 categories: dict[str, dict] = {
     "family_areas": {

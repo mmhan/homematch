@@ -14,10 +14,13 @@ from dataclasses import dataclass
 
 import chromadb
 from chromadb.config import Settings
+from dotenv import load_dotenv
 from langchain_openai import OpenAIEmbeddings
 from langchain_chroma import Chroma
 from langchain_core.documents import Document
 
+# Load environment variables from .env file
+load_dotenv()
 
 @dataclass
 class PropertyListing:
@@ -35,7 +38,7 @@ class PropertyVectorStore:
         self.persist_directory = persist_directory
         self.embeddings = OpenAIEmbeddings(
             api_key=os.getenv("OPENAI_API_KEY"),
-            base_url=os.getenv("OPENAI_API_BASE")
+            base_url=os.getenv("OPENAI_BASE_URL")
         )
         self.vectorstore = None
         self._ensure_directory()
